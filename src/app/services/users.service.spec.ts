@@ -22,11 +22,12 @@ describe('UserService', () => {
             userService.addUser(user)
             expect(userService.users).toEqual([{ id: "1", name: 'Ariel' }])
         })
+    })
+    describe('removeUser', () => {
         it("should remove a user", () => {
             userService.users = [{ id: "1", name: 'Ariel' }];
             userService.removeUser("1");
             expect(userService.users).toEqual([])
         })
-
-    })
+    });
 })
