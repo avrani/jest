@@ -14,7 +14,7 @@ describe('UserService', () => {
         expect(userService).toBeTruthy()
     })
     describe('addUser', () => {
-        it("should add user", () => {
+        it("should add a user", () => {
             const user: UserInteface = {
                 id: '1',
                 name: 'Ariel'
@@ -22,5 +22,11 @@ describe('UserService', () => {
             userService.addUser(user)
             expect(userService.users).toEqual([{ id: "1", name: 'Ariel' }])
         })
+        it("should remove a user", () => {
+            userService.users = [{ id: "1", name: 'Ariel' }];
+            userService.removeUser("1");
+            expect(userService.users).toEqual([])
+        })
+
     })
 })
